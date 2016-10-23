@@ -1,0 +1,4 @@
+<?php
+
+// URL of the tracking page you wish to connect to Alexa
+$realTimeInfoURL = 'http://metrobus.acisconnect.com/text/WebDisplay.aspx?stopRef=4400CY0300&stopPac=wsxamdtg&stopName=Crawley+Bus+Stn+J';
