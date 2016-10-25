@@ -1,7 +1,17 @@
 {
   "intents": [
     {
-      "intent": "getNextDepartingBusses"
+      "intent": "getNextDepartingBusses",
+      "slots": [
+        {
+          "name": "route",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "count",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
     }
   ]
 }

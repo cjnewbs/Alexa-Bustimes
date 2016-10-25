@@ -1,2 +1,20 @@
+getNextDepartingBusses what the next bus is
 getNextDepartingBusses check bus times
-getNextDepartingBusses to check bus times
+getNextDepartingBusses check bus times
+getNextDepartingBusses when is the next bus
+getNextDepartingBusses when the next bus is
+getNextDepartingBusses what is the next number {route} bus
+getNextDepartingBusses check the next {route} bus
+getNextDepartingBusses check the next number {route} bus
+getNextDepartingBusses find the next {route} bus
+getNextDepartingBusses find the next number {route} bus
+getNextDepartingBusses what the next {route} bus is
+getNextDepartingBusses what the next number {route} bus is
+getNextDepartingBusses what are the next {count} busses
+getNextDepartingBusses check the next {count} busses
+getNextDepartingBusses find the next {count} busses
+getNextDepartingBusses what the next {count} busses are
+getNextDepartingBusses what are the next {count} number {route} busses
+getNextDepartingBusses check the next {count} number {route} busses
+getNextDepartingBusses find the next {count} number {route} busses
+getNextDepartingBusses what the next {count} number {route} busses are
