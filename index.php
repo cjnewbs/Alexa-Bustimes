@@ -13,7 +13,6 @@ if (isset($body['request']['intent']['slots']['count']['value'])) {
     $count = $body['request']['intent']['slots']['count']['value'];
 }
 
-$route = 10;
 // load HTML from real-time page
 $realTimeHTML = file_get_contents($realTimeInfoURL);
 

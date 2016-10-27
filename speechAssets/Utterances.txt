@@ -1,6 +1,5 @@
 getNextDepartingBusses what the next bus is
 getNextDepartingBusses check bus times
-getNextDepartingBusses check bus times
 getNextDepartingBusses when is the next bus
 getNextDepartingBusses when the next bus is
 getNextDepartingBusses what is the next number {route} bus
