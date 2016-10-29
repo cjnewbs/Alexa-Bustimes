@@ -3,6 +3,8 @@ class BusTimes
 {
     protected $requestBody;
 
+    protected $realTimeInfoURL;
+
     protected $routeSlot;
 
     protected $countSlot;
@@ -13,6 +15,13 @@ class BusTimes
 
     public function __construct()
     {
+        if (file_exists('config.php')) {
+            include 'config.php';
+            $this->realTimeInfoURL = $realTimeInfoURL;
+        } else {
+            die('Application configuration file unavailable');
+        }
+
         // get POST body from request and extract into an array
         $body = file_get_contents('php://input');
         file_put_contents('alexa.log', $body);
@@ -119,10 +128,8 @@ class BusTimes
 
     public function run()
     {
-        require 'config.php';
-
         // load HTML from real-time page
-        $realTimeHTML = file_get_contents($realTimeInfoURL);
+        $realTimeHTML = file_get_contents($this->realTimeInfoURL);
         $this->extractBusData($realTimeHTML);
 
         $this->getRequestSlots();
