@@ -13,6 +13,10 @@ class BusTimes
 
     protected $speechString;
 
+    /**
+     * BusTimes constructor.
+     * Load app configuration
+     */
     public function __construct()
     {
         if (file_exists('config.php')) {
@@ -28,6 +32,9 @@ class BusTimes
         $this->requestBody = json_decode($body, true);
     }
 
+    /**
+     * Extract slot data from request and load into member properties
+     */
     protected function getRequestSlots()
     {
         if (isset($this->requestBody['request']['intent']['slots']['route']['value'])) {
@@ -38,6 +45,10 @@ class BusTimes
         }
     }
 
+    /**
+     * @param $html
+     * Parse web page and extract all bus data into array ready for filtering
+     */
     protected function extractBusData($html)
     {
         // Load all text in TD tags from web page
@@ -63,6 +74,10 @@ class BusTimes
         $this->buses = $buses;
     }
 
+    /**
+     * @return $this
+     * Remove any results from bus array not related to requested route number
+     */
     protected function filterBusesByRoute()
     {
         // first filter by route
@@ -76,6 +91,10 @@ class BusTimes
         return $this;
     }
 
+    /**
+     * @return $this
+     * Reduce number of results to amount requested
+     */
     protected function filterBusesByCount()
     {
         if (count($this->buses) > $this->countSlot) {
@@ -89,6 +108,10 @@ class BusTimes
         return $this;
     }
 
+    /**
+     * @return $this
+     * Remove all results except next bus
+     */
     protected function filterBusesByNextBus() {
         $nextBus = [$this->buses[0]];
         $this->buses = null;
@@ -96,6 +119,9 @@ class BusTimes
         return $this;
     }
 
+    /**
+     * Parse results array and generate correctly punctuated speech string
+     */
     protected function renderSpeech()
     {
         if (!empty($this->buses)) {
@@ -126,6 +152,9 @@ class BusTimes
         }
     }
 
+    /**
+     * Main application method
+     */
     public function run()
     {
         // load HTML from real-time page
